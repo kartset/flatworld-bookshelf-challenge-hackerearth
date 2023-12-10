@@ -13,7 +13,7 @@ export const BookForm:React.FC<any> = ({
 	const addBook = (e:any) => {
 		e.preventDefault()
 
-		let newBook:any;
+		let newBook = {};
 		let formData = new FormData(e.target)
 		
 		for (const pair of formData.entries()) {
@@ -59,7 +59,7 @@ export const BookForm:React.FC<any> = ({
 		>
           <div className="mb-3">
             <label className="col-form-label">ISBN No:</label>
-            <input 
+            <input autoFocus 
 				defaultValue={currentBookDetails ? currentBookDetails.isbn : ''} 
 				required name='isbn' type="text" className="form-control" id="isbn" 
 			/>
